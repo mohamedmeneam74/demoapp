@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = '<dockerhub-username>/demoapp'      // CHECK: your Docker Hub username
+        IMAGE_NAME = 'medomeneam/demoapp'      
         IMAGE_TAG  = "${env.BUILD_NUMBER}"
-        K8S_SERVER = 'https://192.168.228.129:6443'      // CHECK: control plane IP
+        K8S_SERVER = 'https://192.168.228.129:6443'      
         NAMESPACE  = 'ivolve'
     }
 
