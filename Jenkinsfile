@@ -24,7 +24,7 @@ pipeline {
         stage('Scan Docker Image') {
             steps {
                 // Reports HIGH/CRITICAL findings. Change --exit-code to 1 to fail the build on findings.
-            trivy image --no-progress --severity HIGH,CRITICAL --exit-code 0 --timeout 15m --skip-version-check --scanners vuln $IMAGE_NAME:$IMAGE_TAG
+            sh 'trivy image --no-progress --severity HIGH,CRITICAL --exit-code 0 --timeout 15m --skip-version-check --scanners vuln $IMAGE_NAME:$IMAGE_TAG'
             }
         }
 
